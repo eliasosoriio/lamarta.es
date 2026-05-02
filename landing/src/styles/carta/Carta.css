@@ -1,0 +1,60 @@
+/*=============================================
+=            Carta - Dark Mode               =
+=============================================*/
+
+/* Dark background for entire page */
+body:has(.filtros) {
+    background: #1a1918;
+    min-height: 100vh;
+}
+
+.filtros,
+.entrantes,
+.hamburguesas {
+    width: 90vw;
+    max-width: 1400px;
+    margin: 0 auto var(--spacing-xl) auto;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.filtros {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+}
+
+/* Remove box styling - just a list */
+.entrantes,
+.hamburguesas {
+    background: transparent;
+    padding: var(--spacing-md) 0;
+    border-radius: 0;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    .entrantes,
+    .hamburguesas {
+        width: 85vw;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .entrantes,
+    .hamburguesas {
+        width: 75vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .entrantes,
+    .hamburguesas {
+        width: 70vw;
+    }
+}
+
+/*=====  End of Carta  ======*/
+

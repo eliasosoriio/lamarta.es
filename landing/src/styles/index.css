@@ -1,0 +1,269 @@
+:root {
+  /* Fonts */
+  --first-font: "Chau Philomene One", Sans-serif;
+  --second-font: "Bellota", cursive;
+  
+  /* Brand Colors */
+  --yellow-color: #fece00;
+  --dark-color: #3c3935;
+  --light-dark-color: #616161;
+  --white-color: #fff;
+  --gray-white-color: #e2e2e2;
+  --orange-color: #b45e02;
+  --light-orange-color: #ff8800;
+  
+  /* Extended Color System */
+  --bg-light: #fafafa;
+  --bg-card: #ffffff;
+  --border-color: rgba(60, 57, 53, 0.1);
+  --border-dark: rgba(60, 57, 53, 0.2);
+  
+  /* Spacing System */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  --spacing-2xl: 8rem;
+  
+  /* Container */
+  --container-max-width: 1200px;
+  --container-padding: clamp(1.5rem, 4vw, 4rem);
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
+  
+  /* Z-index Scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--first-font);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--dark-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar - Flat Design */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-color);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-color);
+}
+
+main {
+  flex: 1;
+}
+
+/* Typography System */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--light-dark-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+  transition: color var(--transition-base), transform var(--transition-fast);
+  display: inline-block;
+}
+
+a:hover {
+  color: var(--orange-color);
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Utility Classes */
+.d-flex-row {
+  display: flex;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-none {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Buttons Base Styles - Flat Design */
+.btn {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background: var(--yellow-color);
+  color: var(--dark-color);
+  border-color: var(--yellow-color);
+}
+
+.btn-primary:hover {
+  background: var(--dark-color);
+  color: var(--yellow-color);
+  border-color: var(--yellow-color);
+}
+
+.btn-secondary {
+  background: var(--dark-color);
+  color: var(--white-color);
+  border-color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+/* Card Component - Flat Design */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  transition: all var(--transition-base);
+  border: 2px solid var(--border-color);
+}
+
+.card:hover {
+  border-color: var(--yellow-color);
+}
+
+/* Section Spacing */
+section {
+  padding: var(--spacing-xl) 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-slow) ease-out;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 3px solid var(--yellow-color);
+  outline-offset: 2px;
+}

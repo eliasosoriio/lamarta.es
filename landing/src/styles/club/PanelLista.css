@@ -1,0 +1,66 @@
+
+/*=============================================
+=            PanelLista            =
+=============================================*/
+
+.panel--lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.panel--lista header {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: var(--spacing-sm);
+}
+
+.panel--lista--titulo {
+    text-align: start;
+    text-transform: uppercase;
+    color: var(--yellow-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.panel--lista--desc {
+    font-size: 1.3rem;
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.panel--lista--campo {
+    gap: 0.5rem;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Scrollbar para listas */
+.panel--lista--campo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.panel--lista--campo::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.panel--lista--campo::-webkit-scrollbar-thumb {
+    background: rgba(254, 206, 0, 0.3);
+    border-radius: 10px;
+}
+
+.panel--lista--campo::-webkit-scrollbar-thumb:hover {
+    background: rgba(254, 206, 0, 0.5);
+}
+
+@media screen and (min-width: 768px) {
+    .panel--lista--campo {
+        max-height: 400px;
+    }
+}
+
+/*=====  End of PanelLista  ======*/
+

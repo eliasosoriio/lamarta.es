@@ -1,0 +1,50 @@
+
+/*=============================================
+=            Saludo            =
+=============================================*/
+
+.saludo {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: 2rem;
+    margin: 0 auto;
+    width: 90vw;
+    height: 100%;
+}
+
+.saludo img:first-of-type {
+    width: 3rem;
+    margin: 2rem 0;
+}
+.saludo img:last-of-type {
+    margin: 2rem 0;
+    width: 10rem;
+}
+
+.saludo button {
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+@media screen and (min-width: 960px) {
+    .saludo {
+        width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .saludo {
+        width: 20vw;
+        height: 70vh;
+    }
+    .saludo button {
+        margin-bottom: 2rem;
+        width: 80%;
+    }
+}
+
+/*=====  End of Saludo  ======*/
+

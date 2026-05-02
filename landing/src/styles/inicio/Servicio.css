@@ -1,0 +1,48 @@
+/*=============================================
+=            SERVICIO - Modern Card          =
+=============================================*/
+.servicios--apartado {
+    gap: var(--spacing-md);
+    display: flex;
+    justify-content: flex-start;
+    padding: var(--spacing-md) var(--spacing-lg);
+    transition: all var(--transition-base);
+}
+
+.servicios--apartado--titulo {
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.servicios--apartado span {
+    font-size: 3rem;
+    color: var(--orange-color);
+    transition: all var(--transition-base);
+    padding: 1rem;
+    background: rgba(254, 206, 0, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.servicios--apartado:hover span {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(254, 206, 0, 0.2);
+}
+
+.servicios--apartado h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    flex: 1;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.servicios--apartado p {
+    font-size: 1.5rem;
+    color: var(--light-dark-color);
+    line-height: 1.7;
+}
+
+/*=====  End of SERVICIO  ======*/

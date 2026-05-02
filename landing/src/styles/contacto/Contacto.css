@@ -1,0 +1,70 @@
+/*=============================================
+=            Contacto - Modern Layout        =
+=============================================*/
+
+body:has(.contacto--contenido) {
+    background-color: #1a1918;
+}
+
+.contacto--contenido {
+    margin: var(--spacing-xl) auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: var(--container-padding);
+    max-width: 1200px;
+}
+
+.contacto--imagen {
+    max-width: 40rem;
+    max-height: 35rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    transition: all var(--transition-base);
+    object-fit: cover;
+}
+
+.contacto--imagen:hover {
+    transform: translateY(-5px);
+    border-color: var(--yellow-color);
+}
+
+.contacto--info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contacto--social {
+    gap: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .contacto--contenido {
+        flex-direction: row-reverse;
+        gap: var(--spacing-2xl);
+    }
+    
+    .contacto--imagen {
+        max-width: 45rem;
+        max-height: 40rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .contacto--contenido {
+        margin: 0 auto;
+    }
+    
+    .contacto--imagen {
+        max-width: 50rem;
+        max-height: 45rem;
+    }
+}
+
+/*=====  End of Contacto  ======*/
+

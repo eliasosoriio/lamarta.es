@@ -1,0 +1,47 @@
+/*=============================================
+=            HeaderSeccion - Dark Gradient   =
+=============================================*/
+
+.seccion--cabecera {
+    background: linear-gradient(135deg, #1a1918 0%, #2a2826 50%, rgba(254, 206, 0, 0.2) 100%);
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    min-height: 30vh;
+    position: relative;
+    padding: var(--spacing-lg) var(--container-padding);
+    padding-top: 10rem; /* Extra padding for floating nav */
+    border-bottom: 2px solid rgba(254, 206, 0, 0.3);
+}
+
+.seccion--cabecera::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(254, 206, 0, 0.15), transparent 70%);
+}
+
+.seccion--cabecera h1 {
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .seccion--cabecera {
+        min-height: 25vh;
+        padding-top: 9rem;
+    }
+    
+    .seccion--cabecera h1 {
+        text-align: center;
+    }
+}
+
+/*=====  End of HeaderSeccion  ======*/
+

@@ -1,0 +1,50 @@
+/*=============================================
+=            Conocenos - Dark Modern         =
+=============================================*/
+
+/* Dark background for entire page */
+body:has(.conocenos--secciones) {
+    background: #1a1918;
+    min-height: 100vh;
+}
+
+.conocenos--secciones {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: var(--spacing-2xl);
+    padding: 30px var(--container-padding);
+    max-width: 1400px;
+}
+
+.conocenos--final {
+    text-align: center;
+    max-width: 90vw;
+    margin: 0 auto;
+    margin-bottom: var(--spacing-2xl);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: #f0f0f0;
+    font-weight: 700;
+    padding: var(--spacing-lg);
+    background: rgba(254, 206, 0, 0.05);
+    border: none;
+    border-radius: var(--radius-sm);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+    .conocenos--final {
+        max-width: 80vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .conocenos--final {
+        max-width: 70vw;
+    }
+}
+
+/*=====  End of Conocenos  ======*/
+

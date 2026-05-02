@@ -1,0 +1,97 @@
+/*=============================================
+=            Form - Modern Design            =
+=============================================*/
+
+body:has(.form) {
+    background-color: #1a1918;
+}
+
+.form {
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: var(--spacing-xl) var(--container-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.form--titulo--h2 {
+    color: var(--yellow-color);
+    text-transform: uppercase;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.05em;
+    font-weight: 800;
+    text-align: center;
+}
+
+.form--campos {
+    margin-top: var(--spacing-md);
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register--acceso {
+    color: #f5f5f5;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-base);
+    padding: 0.8rem 2rem;
+    margin-top: var(--spacing-md);
+    border-radius: 50px;
+    border: 2px solid #f5f5f5;
+    display: inline-block;
+    width: 100%;
+    max-width: 220px;
+    height: 4rem;
+}
+
+.register--acceso p {
+    font-size: 1.4rem;
+}
+
+.register--acceso:hover {
+    color: var(--yellow-color);
+    border-color: var(--yellow-color);
+    background: rgba(254, 206, 0, 0.05);
+}
+
+.form--acciones {
+    justify-content: center;
+    align-items: center;
+} 
+
+.register--politicas {
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.register--privacidad {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.register--privacidad a {
+    text-transform: none;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: #d0d0d0;
+    transition: color var(--transition-base);
+}
+
+.register--privacidad a:hover {
+    color: var(--yellow-color);
+}
+
+/*=====  End of Form  ======*/
+

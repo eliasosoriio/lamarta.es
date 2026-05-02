@@ -1,0 +1,68 @@
+/*=============================================
+=            ExplicacionPrecios - Flat       =
+=============================================*/
+.corona {
+    width: 90vw;
+    max-width: 1400px;
+    justify-content: center;
+    margin: var(--spacing-md) auto 0;
+    padding: 0 var(--spacing-md);
+}
+
+.corona img {
+    max-width: 5rem;
+}
+
+.explicacion--precios {
+    gap: var(--spacing-lg);
+    width: 90vw;
+    max-width: 1400px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--yellow-color);
+    border-radius: 50px;
+    margin: var(--spacing-md) auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.explicacion--precios span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+@media screen and (min-width: 768px) {
+    .corona,
+    .explicacion--precios {
+        width: 85vw;
+        justify-content: flex-end;
+    }
+    
+    .explicacion--precios {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .corona,
+    .explicacion--precios {
+        width: 75vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .corona,
+    .explicacion--precios {
+        width: 70vw;
+    }
+    
+    .explicacion--precios {
+        font-size: 1.9rem;
+    }
+}
+
+/*=====  End of ExplicacionPrecios  ======*/
+

@@ -1,0 +1,47 @@
+
+/*=============================================
+=            Puntos            =
+=============================================*/
+
+.puntos {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: 2rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    width: 90vw;
+    height: 100%;
+}
+
+.puntos img:first-of-type {
+    width: 3rem;
+    margin: 2rem 0;
+}
+.puntos img:last-of-type {
+        margin: 2rem 0;
+    width: 10rem;
+}
+
+.puntos--orange {
+    color: var(--light-orange-color);
+    font-size: 3.5rem;
+}
+
+@media screen and (min-width: 960px) {
+    .puntos {
+        width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .puntos {
+        width: 20vw;
+        height: 70vh;
+    }
+}
+
+/*=====  End of Puntos  ======*/
+

@@ -1,0 +1,59 @@
+
+/*=============================================
+=            VentanaSecundaria            =
+=============================================*/
+
+.ventana--secundaria {
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: var(--spacing-xl) var(--container-padding);
+    background-color: transparent;
+}
+
+.ventana--secundaria--titulo {
+    color: #f5f5f5;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.ventana--secundaria--form {
+    margin-top: 1rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.ventana--secundaria--form .campo--panel {
+    min-height: auto;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.ventana--secundaria--form .campo--panel h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.ventana--secundaria--form .campo--panel p {
+    font-size: 1.4rem;
+}
+
+.ventana--secundaria--form .campo--panel p:last-of-type {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.ventana--secundaria--form--acciones {
+    justify-content: center;
+    align-items: center;
+}
+
+/*=====  End of VentanaSecundaria  ======*/
+

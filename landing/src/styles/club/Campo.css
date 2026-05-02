@@ -1,0 +1,50 @@
+/*=============================================
+=            Campo - Modern Input            =
+=============================================*/
+
+.campo--label {
+    color: #f5f5f5;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 0.03em;
+    text-align: center;
+    width: 100%;
+}
+
+.campo--input,
+.campo--textarea,
+.campo--select {
+    font-family: var(--second-font);
+    border-radius: 8px;
+    padding: 1.2rem 2rem;
+    width: 100%;
+    max-width: 450px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.6rem;
+    background: rgba(42, 40, 38, 0.6);
+    color: #f5f5f5;
+    transition: all var(--transition-base);
+}
+
+.campo--input:focus,
+.campo--textarea:focus,
+.campo--select:focus {
+    outline: none;
+    border-color: var(--yellow-color);
+    background: rgba(42, 40, 38, 0.8);
+}
+
+.campo--input::placeholder,
+.campo--textarea::placeholder {
+    color: #888;
+    opacity: 0.8;
+}
+
+.campo--textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/*=====  End of Campo  ======*/
+

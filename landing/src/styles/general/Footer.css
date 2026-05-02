@@ -1,0 +1,391 @@
+/*=============================================
+=            FOOTER - Completely Redesigned   =
+=============================================*/
+
+.footer {
+    background: linear-gradient(180deg, #1a1918 0%, #0f0e0e 100%);
+    color: var(--white-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--yellow-color), transparent);
+}
+
+.footer__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Main Footer Grid */
+.footer__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Brand Section */
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer__logo {
+    max-width: 200px;
+    transition: all var(--transition-base);
+}
+
+.footer__logo:hover {
+    transform: scale(1.05);
+}
+
+.footer__tagline {
+    font-size: 1.6rem;
+    color: var(--gray-white-color);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer__awards {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.footer__award {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(254, 206, 0, 0.1);
+    padding: 0.8rem 1.4rem;
+    border-radius: 50px;
+    border: 2px solid rgba(254, 206, 0, 0.3);
+}
+
+.footer__award i {
+    color: var(--yellow-color);
+    font-size: 1.6rem;
+}
+
+.footer__award span {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* Footer Sections */
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer__title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--yellow-color);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer__title i {
+    font-size: 2rem;
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer__link {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.5rem;
+    color: var(--gray-white-color);
+    transition: all var(--transition-base);
+    padding: 0.8rem 0;
+    line-height: 1.6;
+}
+
+.footer__link i {
+    color: var(--yellow-color);
+    font-size: 1.6rem;
+    min-width: 1.6rem;
+    margin-top: 0.2rem;
+}
+
+.footer__link:hover {
+    color: var(--yellow-color);
+    padding-left: 0.5rem;
+}
+
+/* Hours List */
+.footer__list--hours li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__list--hours li:last-child {
+    border-bottom: none;
+}
+
+.footer__day {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.footer__time {
+    font-size: 1.3rem;
+    color: var(--gray-white-color);
+    line-height: 1.5;
+}
+
+/* Bottom Bar */
+.footer__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.footer__legal a {
+    font-size: 1.3rem;
+    color: var(--gray-white-color);
+    transition: all var(--transition-base);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+.footer__legal a:hover {
+    color: var(--yellow-color);
+    background: rgba(254, 206, 0, 0.1);
+}
+
+.footer__copy {
+    font-size: 1.3rem;
+    color: var(--gray-white-color);
+    opacity: 0.7;
+}
+
+.footer__social {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.footer__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: rgba(254, 206, 0, 0.1);
+    border: 2px solid rgba(254, 206, 0, 0.3);
+    border-radius: 50%;
+    color: var(--yellow-color);
+    font-size: 1.8rem;
+    transition: all var(--transition-base);
+}
+
+.footer__social a:hover {
+    background: var(--yellow-color);
+    color: var(--dark-color);
+    transform: translateY(-3px);
+    border-color: var(--yellow-color);
+}
+
+/* Institutional Grant Section */
+.footer__subvencion {
+    margin-top: var(--spacing-md);
+    padding: clamp(2.4rem, 3vw, 3.2rem);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 243, 237, 0.98) 100%);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    display: grid;
+    gap: var(--spacing-lg);
+    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.footer__subvencion-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer__subvencion-kicker {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-full);
+    background: rgba(254, 206, 0, 0.16);
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer__subvencion-title {
+    margin: 0;
+    font-size: clamp(2.1rem, 3vw, 3rem);
+    line-height: 1.15;
+    color: #1f1f1f;
+    text-align: left;
+}
+
+.footer__subvencion-hashtag {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--orange-color);
+}
+
+.footer__subvencion-meta {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.footer__subvencion-meta p {
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    background: rgba(60, 57, 53, 0.05);
+    border: 1px solid rgba(60, 57, 53, 0.08);
+    border-radius: var(--radius-md);
+    color: var(--dark-color);
+    font-size: 1.45rem;
+    line-height: 1.5;
+}
+
+.footer__subvencion-meta strong {
+    color: #1f1f1f;
+}
+
+.footer__subvencion-logos {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.footer__subvencion-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 12rem;
+    padding: 1.4rem;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(60, 57, 53, 0.1);
+    overflow: hidden;
+}
+
+.footer__subvencion-logo-card--dark {
+    background: #ffffff;
+}
+
+.footer__subvencion-logo-card--moves {
+    background: #4b8793;
+}
+
+.footer__subvencion-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer__subvencion-logo--idae {
+    max-width: 30rem;
+}
+
+.footer__subvencion-logo--ministerio {
+    max-width: 42rem;
+}
+
+.footer__subvencion-logo--moves {
+    max-width: 20rem;
+}
+
+.footer__subvencion-logo--inega {
+    max-width: 34rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .footer__main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer__bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer__legal {
+        justify-content: flex-start;
+    }
+
+    .footer__subvencion-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer__subvencion-logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer__main {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .footer__brand {
+        grid-column: auto;
+    }
+
+    .footer__tagline {
+        max-width: 100%;
+    }
+
+    .footer__subvencion {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        align-items: start;
+    }
+}
+
+/*=====  End of FOOTER  ======*/

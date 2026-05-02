@@ -1,0 +1,52 @@
+/*=============================================
+=            ExplicacionMenu - Compact       =
+=============================================*/
+
+.menu--explicacion {
+    border: none;
+    border-left: 3px solid var(--yellow-color);
+    border-radius: 0;
+    font-size: 1.3rem;
+    max-width: 90vw;
+    width: 100%;
+    align-self: center;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(254, 206, 0, 0.05);
+    line-height: 1.6;
+    font-weight: 600;
+    margin: var(--spacing-sm) auto var(--spacing-md);
+    text-align: left;
+}
+
+.menu--explicacion p {
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+.menu--explicacion strong {
+    color: var(--yellow-color);
+    font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+    .menu--explicacion {
+        width: 85vw;
+        max-width: 1400px;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .menu--explicacion {
+        width: 75vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .menu--explicacion {
+        width: 70vw;
+    }
+}
+
+/*=====  End of ExplicacionMenu  ======*/
+

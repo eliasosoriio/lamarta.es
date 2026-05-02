@@ -1,0 +1,47 @@
+/*=============================================
+=            BotonSubmit - Modern Button     =
+=============================================*/
+
+.button--submit {
+    background: var(--yellow-color);
+    font-family: var(--first-font);
+    color: var(--dark-color);
+    border-radius: 50px;
+    border: 2px solid transparent;
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: var(--spacing-md);
+    text-align: center;
+    width: 100%;
+    max-width: 220px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    height: 4rem;
+
+}
+
+.button--submit:hover {
+    background: transparent;
+    color: var(--yellow-color);
+    border-color: var(--yellow-color);
+}
+
+.button--submit:active {
+    transform: translateY(-1px);
+}
+
+.button--submit:disabled {
+    background: #444;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button--submit:disabled:hover {
+    transform: none;
+}
+
+/*=====  End of BotonSubmit  ======*/
+
