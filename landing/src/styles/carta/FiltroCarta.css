@@ -13,7 +13,7 @@
     margin-top: var(--spacing-sm);
     text-align: center;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;

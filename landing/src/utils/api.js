@@ -4,7 +4,22 @@ export function getApiUrl(endpoint = "") {
   return endpoint ? `${API_BASE_URL}/${endpoint}` : API_BASE_URL;
 }
 
+// Caché en memoria de lecturas públicas (sin token) para no repetir peticiones al navegar.
+const CACHE_TTL_MS = 60 * 1000;
+const publicCache = new Map();
+
 export async function apiFetch(endpoint, { method = "GET", data, token } = {}) {
+  const cacheable = method === "GET" && !token;
+
+  if (cacheable) {
+    const cached = publicCache.get(endpoint);
+    if (cached && Date.now() - cached.time < CACHE_TTL_MS) {
+      return cached.payload;
+    }
+  } else if (method !== "GET") {
+    publicCache.clear();
+  }
+
   const headers = {};
 
   if (data !== undefined) {
@@ -41,6 +56,10 @@ export async function apiFetch(endpoint, { method = "GET", data, token } = {}) {
       ? payload.error
       : `HTTP ${response.status}`;
     throw new Error(message);
+  }
+
+  if (cacheable) {
+    publicCache.set(endpoint, { time: Date.now(), payload });
   }
 
   return payload;

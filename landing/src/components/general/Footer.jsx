@@ -15,6 +15,8 @@ function Footer() {
               src="https://lamarta.es/assets/logo-lamarta-2.svg"
               alt="Logo de Lamarta"
               className="footer__logo"
+              loading="lazy"
+              decoding="async"
             />
             <p className="footer__tagline">
               Las mejores smash burgers de Galicia
@@ -165,16 +167,16 @@ function Footer() {
 
           <div className="footer__subvencion-logos" aria-label="Organismos colaboradores">
             <div className="footer__subvencion-logo-card footer__subvencion-logo-card--dark">
-              <img src="/logo-idae.png" alt="IDAE" className="footer__subvencion-logo footer__subvencion-logo--idae" />
+              <img loading="lazy" decoding="async" src="/logo-idae.png" alt="IDAE" className="footer__subvencion-logo footer__subvencion-logo--idae" />
             </div>
             <div className="footer__subvencion-logo-card">
-              <img src="/ministerio-transicion-ecologica.jpg" alt="Ministerio para la Transición Ecológica y el Reto Demográfico" className="footer__subvencion-logo footer__subvencion-logo--ministerio" />
+              <img loading="lazy" decoding="async" src="/ministerio-transicion-ecologica.jpg" alt="Ministerio para la Transición Ecológica y el Reto Demográfico" className="footer__subvencion-logo footer__subvencion-logo--ministerio" />
             </div>
             <div className="footer__subvencion-logo-card footer__subvencion-logo-card--moves">
-              <img src="/moves-III.jpg" alt="MOVES Movilidad Eficiente y Sostenible" className="footer__subvencion-logo footer__subvencion-logo--moves" />
+              <img loading="lazy" decoding="async" src="/moves-III.jpg" alt="MOVES Movilidad Eficiente y Sostenible" className="footer__subvencion-logo footer__subvencion-logo--moves" />
             </div>
             <div className="footer__subvencion-logo-card">
-              <img src="/inega.jpeg" alt="Instituto Enerxético de Galicia" className="footer__subvencion-logo footer__subvencion-logo--inega" />
+              <img loading="lazy" decoding="async" src="/inega.jpeg" alt="Instituto Enerxético de Galicia" className="footer__subvencion-logo footer__subvencion-logo--inega" />
             </div>
           </div>
         </div>

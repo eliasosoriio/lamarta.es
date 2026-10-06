@@ -24,7 +24,7 @@ class ArticuloController extends Controller
     public function getAll()
     {
         $model = new ArticuloModel();
-        echo json_encode($model->getAll($this->puedeVerTodo()), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        echo json_encode($model->getAll($this->puedeVerTodo()), JSON_UNESCAPED_UNICODE);
     }
 
     public function insert($object)

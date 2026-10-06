@@ -9,7 +9,7 @@
     padding: var(--spacing-lg) var(--spacing-sm);
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .smash:hover {
@@ -65,7 +65,7 @@
     min-width: 9rem;
     text-align: center;
     font-weight: 700;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .smash--precios li:first-child {

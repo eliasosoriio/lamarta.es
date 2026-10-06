@@ -37,7 +37,7 @@ function Contacto() {
               titulo={"LAMARTA Youtube"}
             />
           </section>
-          <img className='contacto--imagen' src="https://vilagarciavirtual.com/uploads/imagenes-negocio/lamarta_01.jpg" alt="Imagen del interior del local de LAMARTA" />
+          <img loading="lazy" decoding="async" className='contacto--imagen' src="https://vilagarciavirtual.com/uploads/imagenes-negocio/lamarta_01.jpg" alt="Imagen del interior del local de LAMARTA" />
       </section>
     </>
   )

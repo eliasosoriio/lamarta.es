@@ -7,7 +7,7 @@
     padding: 1.5rem 2.5rem;
     border-radius: 50px;
     gap: var(--spacing-md);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     text-transform: none;
     min-width: 28rem;
     font-size: 1.6rem;

@@ -21,7 +21,7 @@ body:has(.contacto--contenido) {
     width: 100%;
     border-radius: 8px;
     border: 2px solid rgba(255, 255, 255, 0.15);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     object-fit: cover;
 }
 

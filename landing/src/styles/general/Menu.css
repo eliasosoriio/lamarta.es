@@ -19,7 +19,7 @@
     right: 2rem;
     z-index: var(--z-modal);
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     border: 3px solid var(--dark-color);
 }
 
@@ -46,7 +46,7 @@
     height: 0.35rem;
     background: var(--dark-color);
     border-radius: var(--radius-full);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .desplegable--boton {
@@ -182,7 +182,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     position: relative;
 }
 
@@ -309,7 +309,7 @@
     justify-content: center;
     color: var(--yellow-color);
     font-size: 2rem;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .social-btn:hover {

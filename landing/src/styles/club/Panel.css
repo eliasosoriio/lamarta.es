@@ -31,7 +31,7 @@ body:has(.paneles--container) {
     border-radius: 8px;
     padding: var(--spacing-lg);
     border: 2px solid rgba(255, 255, 255, 0.15);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .paneles--footer {

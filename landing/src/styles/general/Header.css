@@ -8,7 +8,7 @@
     right: 0;
     z-index: var(--z-sticky);
     padding: 2rem 0;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .header__container {
@@ -23,7 +23,7 @@
     backdrop-filter: blur(10px);
     border-radius: 100px;
     border: 1px solid rgba(254, 206, 0, 0.15);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .header__container:hover {
@@ -40,7 +40,7 @@
     display: block;
     height: 4.5rem;
     width: auto;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .header__logo:hover img {
@@ -64,7 +64,7 @@
     letter-spacing: 0.05em;
     color: rgba(255, 255, 255, 0.7);
     position: relative;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     border-radius: 50px;
 }
 
@@ -89,7 +89,7 @@
     letter-spacing: 0.05em;
     border: 2px solid var(--yellow-color);
     border-radius: 50px;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     flex-shrink: 0;
     margin-right: 0.5rem;
 }

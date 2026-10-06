@@ -40,6 +40,17 @@
   --transition-fast: 150ms ease-in-out;
   --transition-base: 250ms ease-in-out;
   --transition-slow: 400ms ease-in-out;
+  --transition-props:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    opacity var(--transition-base),
+    transform var(--transition-base);
+
+  /* Shadows (usadas en App.css) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.25);
   
   /* Z-index Scale */
   --z-dropdown: 1000;
@@ -181,7 +192,7 @@ li {
   border: 2px solid transparent;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: var(--transition-props);
   letter-spacing: 0.05em;
 }
 
@@ -214,7 +225,7 @@ li {
   background: var(--bg-card);
   border-radius: var(--radius-sm);
   padding: var(--spacing-md);
-  transition: all var(--transition-base);
+  transition: var(--transition-props);
   border: 2px solid var(--border-color);
 }
 
@@ -266,4 +277,16 @@ section {
 *:focus-visible {
   outline: 3px solid var(--yellow-color);
   outline-offset: 2px;
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

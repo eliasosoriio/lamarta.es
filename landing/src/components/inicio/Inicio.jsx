@@ -3,6 +3,10 @@ import React from 'react'
 import Servicio from "./Servicio";
 import { Link } from "react-router-dom";
 import ScrollArriba from "../general/ScrollArriba";
+import menu2x12 from "../../assets/img/home/menu-2x12.webp";
+import tequenos from "../../assets/img/home/tequenos.webp";
+import alitas from "../../assets/img/home/alitas.webp";
+import gouda from "../../assets/img/home/gouda.webp";
 
 function Inicio() {
   return (
@@ -170,9 +174,12 @@ function Inicio() {
             <div className="gallery-item gallery-item--hero">
               <div className="gallery-item__image">
                 <img 
-                  src="https://lamarta.es/assets/2x12.png" 
+                  src={menu2x12}
+                  width="1000"
+                  height="1250" 
                   alt="Menú 2x12" 
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="gallery-item__overlay">
@@ -188,9 +195,12 @@ function Inicio() {
             <div className="gallery-item">
               <div className="gallery-item__image">
                 <img 
-                  src="https://lamarta.es/assets/tequenos.jpg" 
+                  src={tequenos}
+                  width="800"
+                  height="1000" 
                   alt="Tequeños" 
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="gallery-item__overlay">
@@ -205,9 +215,12 @@ function Inicio() {
             <div className="gallery-item">
               <div className="gallery-item__image">
                 <img 
-                  src="https://lamarta.es/assets/alitas.png" 
+                  src={alitas}
+                  width="800"
+                  height="1000" 
                   alt="Alitas BBQ" 
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="gallery-item__overlay">
@@ -222,9 +235,12 @@ function Inicio() {
             <div className="gallery-item">
               <div className="gallery-item__image">
                 <img 
-                  src="https://lamarta.es/assets/gouda.png" 
+                  src={gouda}
+                  width="800"
+                  height="1000" 
                   alt="Gouda Rings" 
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="gallery-item__overlay">

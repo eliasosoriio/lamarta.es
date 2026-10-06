@@ -17,7 +17,7 @@ function Header() {
                         src="https://lamarta.es/assets/logo-lamarta-2.svg"
                         alt="Logo de Lamarta"
                         width="120"
-                        height="auto"
+                        decoding="async"
                     />
                 </Link>
 

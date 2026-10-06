@@ -85,6 +85,15 @@ if (!in_array($elemento, $controladoresPublicos, true) && !$esLecturaPublica) {
     }
 }
 
+//Caché HTTP: las lecturas públicas sin token se pueden cachear unos minutos;
+//cualquier otra respuesta (con token o que modifica datos) no debe cachearse.
+if ($esLecturaPublica && empty($_SERVER["HTTP_X_API_KEY"])) {
+    header("Cache-Control: public, max-age=60, stale-while-revalidate=300");
+} else {
+    header("Cache-Control: no-store");
+}
+header("Vary: Origin, X-API-KEY");
+
 //Se filtra la acción en función del método
 switch ($metodo) {
     case 'POST':

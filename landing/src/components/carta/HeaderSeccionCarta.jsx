@@ -5,7 +5,7 @@ function HeaderSeccionCarta({titulo, imagen}) {
   return (
     <header className='entrantes--header d-flex-row'>
       <h2>{titulo}</h2>
-      {imagen && <img src={imagen} alt={`Imagen de sección en la carta: ${titulo}`} />}
+      {imagen && <img loading="lazy" decoding="async" src={imagen} alt={`Imagen de sección en la carta: ${titulo}`} />}
     </header>
   )
 }

@@ -16,7 +16,7 @@
     width: 100%;
     max-width: 220px;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     height: 4rem;

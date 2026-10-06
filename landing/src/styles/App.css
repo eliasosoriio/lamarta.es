@@ -80,7 +80,7 @@
     padding: 1.2rem 3rem;
     border: 2px solid var(--yellow-color);
     border-radius: var(--radius-md);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     position: relative;
     z-index: 1;
     font-weight: 600;

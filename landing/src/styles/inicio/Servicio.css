@@ -6,7 +6,7 @@
     display: flex;
     justify-content: flex-start;
     padding: var(--spacing-md) var(--spacing-lg);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .servicios--apartado--titulo {
@@ -19,7 +19,7 @@
 .servicios--apartado span {
     font-size: 3rem;
     color: var(--orange-color);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     padding: 1rem;
     background: rgba(254, 206, 0, 0.1);
     border-radius: var(--radius-md);

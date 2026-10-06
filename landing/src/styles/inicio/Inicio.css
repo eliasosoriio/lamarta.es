@@ -87,7 +87,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: var(--radius-sm);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     border: 2px solid transparent;
     display: inline-flex;
     align-items: center;
@@ -137,7 +137,7 @@
     padding: var(--spacing-md);
     border: 2px solid rgba(254, 206, 0, 0.2);
     border-radius: var(--radius-sm);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     background: rgba(254, 206, 0, 0.05);
 }
 
@@ -281,7 +281,7 @@
     padding: var(--spacing-lg);
     position: relative;
     overflow: hidden;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .service-box::before {
@@ -358,7 +358,7 @@
     justify-content: center;
     font-size: 4rem;
     color: var(--dark-color);
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     position: relative;
 }
 
@@ -369,7 +369,7 @@
     border: 2px solid var(--yellow-color);
     border-radius: 50%;
     opacity: 0;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .service-box:hover .service-box__icon {
@@ -437,7 +437,7 @@
     letter-spacing: 0.05em;
     border: 2px solid var(--yellow-color);
     border-radius: 50px;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .service-box__btn:hover {
@@ -607,7 +607,7 @@
     letter-spacing: 0.05em;
     border: 2px solid var(--yellow-color);
     border-radius: 50px;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     width: fit-content;
 }
 
@@ -642,7 +642,7 @@
     letter-spacing: 0.05em;
     border: 2px solid var(--yellow-color);
     border-radius: 50px;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
 }
 
 .gallery__cta-btn:hover {

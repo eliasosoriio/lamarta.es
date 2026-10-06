@@ -27,7 +27,7 @@
     font-weight: 700;
     font-size: 1.3rem;
     padding: 0.6rem 1.8rem;
-    transition: all var(--transition-base);
+    transition: var(--transition-props);
     border: 2px solid var(--yellow-color);
     text-transform: uppercase;
     letter-spacing: 0.05em;

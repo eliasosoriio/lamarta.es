@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import HeaderSeccion from '../general/HeaderSeccion';
 import '../../styles/carta/Carta.css';
@@ -39,7 +39,22 @@ function Carta() {
     cargarCarta();
   }, []);
 
-  const seccionesOrdenadas = [...secciones].sort((left, right) => Number(left.orden) - Number(right.orden));
+  const seccionesOrdenadas = useMemo(
+    () => [...secciones].sort((left, right) => Number(left.orden) - Number(right.orden)),
+    [secciones],
+  );
+
+  const productosPorSeccion = useMemo(() => {
+    const grupos = new Map();
+    [...productos]
+      .sort((left, right) => Number(left.orden) - Number(right.orden))
+      .forEach((producto) => {
+        const clave = Number(producto.id_seccion);
+        if (!grupos.has(clave)) grupos.set(clave, []);
+        grupos.get(clave).push(producto);
+      });
+    return grupos;
+  }, [productos]);
 
   return (
     <>
@@ -93,9 +108,7 @@ function Carta() {
           return null;
         }
 
-        const items = productos
-          .filter((producto) => Number(producto.id_seccion) === Number(seccion.id_seccion))
-          .sort((left, right) => Number(left.orden) - Number(right.orden));
+        const items = productosPorSeccion.get(Number(seccion.id_seccion)) || [];
 
         if (items.length === 0) {
           return null;
