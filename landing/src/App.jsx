@@ -9,7 +9,7 @@ import PageTransition from "./components/general/PageTransition";
 const Inicio = lazy(() => import("./components/inicio/Inicio"));
 const Conocenos = lazy(() => import("./components/conocenos/Conocenos"));
 const Carta = lazy(() => import("./components/carta/Carta"));
-const Blog = lazy(() => import("./components/blog/Blog"));
+const Historia = lazy(() => import("./components/historia/Historia"));
 const Contacto = lazy(() => import("./components/contacto/Contacto"));
 const NotFound = lazy(() => import("./components/general/NotFound"));
 const Login = lazy(() => import("./components/club/Login"));
@@ -40,7 +40,8 @@ function AnimatedRoutes() {
       <AnimatePresence mode="wait">
          <Routes location={location} key={location.pathname}>
             <Route path="/" element={renderPage(<Inicio />)}></Route>
-            <Route path="/blog" element={renderPage(<Blog />)}></Route>
+            <Route path="/historia" element={renderPage(<Historia />)}></Route>
+            <Route path="/blog" element={<Navigate to="/historia" replace />}></Route>
             <Route path="/conocenos" element={renderPage(<Conocenos />)}></Route>
             <Route path="/carta" element={renderPage(<Carta />)}></Route>
             <Route path="/contacto" element={renderPage(<Contacto />)}></Route>

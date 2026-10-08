@@ -1,0 +1,67 @@
+/*=============================================
+=            Mapa - Carga bajo demanda       =
+=============================================*/
+
+.mapa {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-sm);
+    border: 2px solid rgba(254, 206, 0, 0.3);
+    overflow: hidden;
+    background: rgba(254, 206, 0, 0.05);
+}
+
+.mapa--iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mapa--boton {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--first-font);
+    color: var(--white-color);
+    text-align: center;
+    transition: var(--transition-props);
+}
+
+.mapa--boton:hover {
+    background: rgba(254, 206, 0, 0.1);
+}
+
+.mapa--boton i {
+    font-size: 4.5rem;
+    color: var(--yellow-color);
+}
+
+.mapa--titulo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--yellow-color);
+}
+
+.mapa--direccion {
+    font-family: var(--second-font);
+    font-size: 1.5rem;
+    color: var(--gray-white-color);
+}
+
+.mapa--aviso {
+    font-family: var(--second-font);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*=====  End of Mapa  ======*/

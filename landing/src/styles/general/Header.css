@@ -80,31 +80,86 @@
 
 /* CTA Button */
 .header__cta {
-    background: var(--yellow-color);
-    color: var(--dark-color);
-    padding: 1rem 2.5rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 2px solid var(--yellow-color);
-    border-radius: 50px;
-    transition: var(--transition-props);
     flex-shrink: 0;
     margin-right: 0.5rem;
 }
 
-.header__cta:hover {
-    background: transparent;
+/* Acceso al juego (solo móvil/tablet; en escritorio está en el menú) */
+.header__juego {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 3.8rem;
+    padding: 0 1.2rem;
+    margin-left: auto;
+    border-radius: 50px;
+    border: 1px solid rgba(254, 206, 0, 0.5);
+    background: rgba(254, 206, 0, 0.1);
     color: var(--yellow-color);
-    border-color: var(--yellow-color);
-    transform: scale(1.05);
+    font-size: 1.4rem;
+    transition: var(--transition-props);
+}
+
+.header__juego-texto {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* En pantallas muy estrechas se queda solo el icono */
+@media (max-width: 359px) {
+    .header__juego-texto {
+        display: none;
+    }
+
+    .header__juego {
+        width: 3.8rem;
+        padding: 0;
+    }
+}
+
+.header__juego:hover,
+.header__juego:focus-visible {
+    background: var(--yellow-color);
+    color: var(--dark-color);
+}
+
+.header__juego-punto {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--yellow-color);
+    border: 2px solid rgba(28, 26, 25, 1);
+    animation: header-juego-latido 1.8s ease-in-out infinite;
+}
+
+@keyframes header-juego-latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header__juego-punto {
+        animation: none;
+    }
 }
 
 /* Desktop */
 @media (min-width: 960px) {
     .header__nav {
         display: flex;
+    }
+
+    .header__juego {
+        display: none;
     }
 }
 
@@ -113,7 +168,28 @@
     .header {
         padding: 1.5rem 0;
     }
-    
+
+    /* Tres elementos: logo a la izquierda, juego centrado, pedir a la derecha */
+    .header__container {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    .header__logo {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .header__juego {
+        grid-column: 2;
+        margin-left: 0;
+    }
+
+    .header__cta {
+        grid-column: 3;
+        justify-self: end;
+    }
+
     .header__container {
         padding: 1rem 2rem;
         border-radius: 60px;
@@ -128,8 +204,6 @@
     }
     
     .header__cta {
-        padding: 0.9rem 2rem;
-        font-size: 1.2rem;
         margin-right: 0.3rem;
     }
 }
@@ -149,9 +223,21 @@
         height: 3.5rem;
     }
     
+    .header__juego {
+        height: 3.5rem;
+    }
+
+    /* Mismo alto y ancho que el logo */
     .header__cta {
-        padding: 0.8rem 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 8.8rem;
+        height: 3.5rem;
+        padding: 0;
         font-size: 1.1rem;
+        white-space: nowrap;
     }
 }
 

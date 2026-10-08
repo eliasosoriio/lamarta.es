@@ -9,7 +9,7 @@
     gap: var(--spacing-md);
     transition: var(--transition-props);
     text-transform: none;
-    min-width: 28rem;
+    width: 100%;
     font-size: 1.6rem;
     font-weight: 500;
     align-items: center;
@@ -46,14 +46,12 @@
 @media screen and (min-width: 768px) {
     .barra {
         font-size: 1.7rem;
-        min-width: 32rem;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .barra {
         font-size: 1.8rem;
-        min-width: 35rem;
         padding: 2rem 3rem;
     }
     

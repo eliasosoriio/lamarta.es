@@ -1,154 +1,127 @@
 import "../../styles/general/Footer.css"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { HORARIOS, diaActual, estadoActual } from '../../utils/horarios'
 
 function Footer() {
+  const [estado, setEstado] = useState(() => estadoActual());
+  const [hoy, setHoy] = useState(() => diaActual());
+
+  // El estado y el día marcado se refrescan cada minuto.
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setEstado(estadoActual());
+      setHoy(diaActual());
+    }, 60 * 1000);
+    return () => clearInterval(intervalo);
+  }, []);
+
   return (
     <footer className='footer'>
       <div className="footer__container">
 
-        {/* Main Footer Content */}
-        <div className="footer__main">
+        <div className="pie">
 
-          {/* Brand Section */}
-          <div className="footer__brand">
+          {/* Marca */}
+          <section className="pie__marca" aria-label="Lamarta">
             <img
               src="https://lamarta.es/assets/logo-lamarta-2.svg"
               alt="Logo de Lamarta"
-              className="footer__logo"
+              className="pie__logo"
               loading="lazy"
               decoding="async"
             />
-            <p className="footer__tagline">
-              Las mejores smash burgers de Galicia
+            <p className="pie__lema">Las mejores smash burgers de Galicia</p>
+            <ul className="pie__premios" aria-label="Premios">
+              <li><i className="fa-solid fa-trophy" aria-hidden="true"></i> 1º Galicia</li>
+              <li><i className="fa-solid fa-medal" aria-hidden="true"></i> 3º España</li>
+            </ul>
+            <a
+              href="https://r.qamarero.com/lamarta?mode=PICKUP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--primary pie__pedir"
+            >
+              <i className="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+              Pedir online
+            </a>
+          </section>
+
+          {/* Explora */}
+          <nav className="pie__columna" aria-label="Enlaces del sitio">
+            <h3 className="pie__titulo">Explora</h3>
+            <ul className="pie__lista">
+              <li><Link to="/" className="pie__enlace">Inicio</Link></li>
+              <li><Link to="/carta" className="pie__enlace">Carta</Link></li>
+              <li><Link to="/conocenos" className="pie__enlace">¡Aplástala tú!</Link></li>
+              <li><Link to="/historia" className="pie__enlace">Historia</Link></li>
+              <li><Link to="/contacto" className="pie__enlace">Contacto</Link></li>
+            </ul>
+          </nav>
+
+          {/* Visítanos */}
+          <section className="pie__columna" aria-label="Cómo encontrarnos">
+            <h3 className="pie__titulo">Visítanos</h3>
+            <p className={`pie__estado ${estado.abierto ? 'pie__estado--abierto' : ''}`} role="status">
+              <span className="pie__estado-punto" aria-hidden="true"></span>
+              {estado.texto}
             </p>
-            <div className="footer__awards">
-              <div className="footer__award">
-                <i className="fas fa-trophy"></i>
-                <span>1º Galicia</span>
-              </div>
-              <div className="footer__award">
-                <i className="fas fa-medal"></i>
-                <span>3º España</span>
-              </div>
-            </div>
-          </div>
+            <a href="tel:664368661" className="pie__telefono">664 36 86 61</a>
+            <a
+              href="https://maps.app.goo.gl/5bmD4zxCKLPidTUC6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pie__enlace pie__direccion"
+            >
+              Rúa Arcebispo Xelmírez, 7<br />
+              36600 Vilagarcía de Arousa
+            </a>
+          </section>
 
-          {/* Contact Section */}
-          <div className="footer__section">
-            <h3 className="footer__title">
-              <i className="fas fa-address-book"></i>
-              Contacto
-            </h3>
-            <ul className="footer__list">
-              <li>
-                <a href="tel:664368661" className="footer__link">
-                  <i className="fas fa-phone"></i>
-                  664 36 86 61
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://maps.app.goo.gl/5bmD4zxCKLPidTUC6"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="footer__link"
-                >
-                  <i className="fas fa-map-marker-alt"></i>
-                  Rúa Arcebispo Xelmírez, 7<br/>
-                  36600 Vilagarcía de Arousa
-                </a>
-              </li>
-              <li>
-                <a href="/contacto" className="footer__link">
-                  <i className="fas fa-envelope"></i>
-                  Contacto
-                </a>
-              </li>
+          {/* Horarios */}
+          <section className="pie__columna" aria-label="Horarios">
+            <h3 className="pie__titulo">Horarios</h3>
+            <ul className="pie__horarios">
+              {HORARIOS.map((horario) => (
+                <li key={horario.etiqueta} className={horario.dias.includes(hoy) ? 'pie__hoy' : ''}>
+                  <span className="pie__dia">{horario.etiqueta}</span>
+                  <span className="pie__horas">
+                    {horario.cerrado
+                      ? <span className="pie__cerrado">Cerrado</span>
+                      : horario.tramos.map(([inicio, fin]) => (
+                          <span key={inicio}>{inicio} - {fin}</span>
+                        ))}
+                  </span>
+                </li>
+              ))}
             </ul>
-          </div>
-
-          {/* Quick Links Section */}
-          <div className="footer__section">
-            <h3 className="footer__title">
-              <i className="fas fa-link"></i>
-              Enlaces rápidos
-            </h3>
-            <ul className="footer__list">
-              <li>
-                <a href="/carta" className="footer__link">
-                  <i className="fas fa-utensils"></i>
-                  Nuestra Carta
-                </a>
-              </li>
-              <li>
-                <a href="/conocenos" className="footer__link">
-                  <i className="fas fa-users"></i>
-                  Conócenos
-                </a>
-              </li>
-              <li>
-                <a href="/club/login" className="footer__link">
-                  <i className="fas fa-star"></i>
-                  Acceso empleados
-                </a>
-              </li>
-              <li>
-                <a href="/blog" className="footer__link">
-                  <i className="fas fa-newspaper"></i>
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Hours Section */}
-          <div className="footer__section">
-            <h3 className="footer__title">
-              <i className="fas fa-clock"></i>
-              Horarios
-            </h3>
-            <ul className="footer__list footer__list--hours">
-              <li>
-                <span className="footer__day">Lunes a Jueves</span>
-                <span className="footer__time">13:00 - 16:00<br/>20:00 - 23:00</span>
-              </li>
-              <li>
-                <span className="footer__day">Viernes</span>
-                <span className="footer__time">13:00 - 16:00<br/>20:00 - 00:00</span>
-              </li>
-              <li>
-                <span className="footer__day">Sábado</span>
-                <span className="footer__time">13:00 - 16:00<br/>20:00 - 01:00</span>
-              </li>
-              <li>
-                <span className="footer__day">Domingo</span>
-                <span className="footer__time">20:00 - 00:00</span>
-              </li>
-            </ul>
-          </div>
-
+          </section>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="footer__bottom">
-          <div className="footer__legal">
-            <a href="/avisolegal">Aviso Legal</a>
-            <a href="/privacidad">Privacidad</a>
-            <a href="/cookies">Cookies</a>
-            <a href="/accesibilidad">Accesibilidad</a>
-          </div>
-          <p className="footer__copy">
+        {/* Base: legal, copyright y redes */}
+        <div className="pie__base">
+          <ul className="pie__legal">
+            <li><Link to="/avisolegal">Aviso Legal</Link></li>
+            <li><Link to="/privacidad">Privacidad</Link></li>
+            <li><Link to="/cookies">Cookies</Link></li>
+            <li><Link to="/accesibilidad">Accesibilidad</Link></li>
+            <li><Link to="/club/login">Acceso empleados</Link></li>
+          </ul>
+          <p className="pie__copy">
             &copy; {new Date().getFullYear()} Lamarta. Todos los derechos reservados.
           </p>
-          <div className="footer__social">
-            <a href="https://www.instagram.com/lamarta.es/" target="_blank" rel="noreferrer" aria-label="Instagram">
-              <i className="fab fa-instagram"></i>
+          <div className="pie__redes">
+            <a href="https://www.instagram.com/lamarta_bbb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Lamarta">
+              <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.youtube.com/@LAMARTABBB" target="_blank" rel="noreferrer" aria-label="YouTube">
-              <i className="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@LAMARTABBB" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Lamarta">
+              <i className="fa-brands fa-youtube"></i>
             </a>
           </div>
         </div>
+
+        {/* Rótulo: la palabra, recortada, apoyada en el bloque inferior */}
+        <p className="pie__rotulo" aria-hidden="true">LAMARTA</p>
 
         <div className="footer__subvencion" aria-labelledby="footer-subvencion-title">
           <div className="footer__subvencion-copy">

@@ -3,9 +3,13 @@ import '../../styles/carta/HeaderSeccionCarta.css'
 
 function HeaderSeccionCarta({titulo, imagen}) {
   return (
-    <header className='entrantes--header d-flex-row'>
+    <header className='carta--cabecera'>
+      {imagen && (
+        <span className='carta--cabecera__icono'>
+          <img loading="lazy" decoding="async" src={imagen} alt="" />
+        </span>
+      )}
       <h2>{titulo}</h2>
-      {imagen && <img loading="lazy" decoding="async" src={imagen} alt={`Imagen de sección en la carta: ${titulo}`} />}
     </header>
   )
 }

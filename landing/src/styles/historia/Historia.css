@@ -1,0 +1,174 @@
+/*=============================================
+=            Historia - Línea del tiempo     =
+=============================================*/
+
+.historia {
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
+}
+
+.historia__intro {
+    text-align: center;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    color: var(--gray-white-color);
+    max-width: 60rem;
+    margin: 0 auto var(--spacing-lg);
+}
+
+/* Línea vertical */
+.historia__lista {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding-left: 6rem;
+}
+
+.historia__lista::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2rem;
+    width: 3px;
+    background: linear-gradient(180deg, var(--yellow-color), rgba(254, 206, 0, 0.15));
+    border-radius: var(--radius-full);
+}
+
+.historia__hito {
+    position: relative;
+    list-style: none;
+}
+
+.historia__punto {
+    position: absolute;
+    left: -6rem;
+    top: 0;
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-color);
+    color: var(--yellow-color);
+    border: 3px solid var(--yellow-color);
+    border-radius: 50%;
+    font-size: 1.6rem;
+    z-index: 1;
+}
+
+.historia__hito--destacado .historia__punto {
+    background: var(--yellow-color);
+    color: var(--dark-color);
+}
+
+.historia__tarjeta {
+    background: rgba(254, 206, 0, 0.05);
+    border: 2px solid rgba(254, 206, 0, 0.2);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    transition: var(--transition-props);
+}
+
+.historia__tarjeta:hover {
+    border-color: var(--yellow-color);
+    background: rgba(254, 206, 0, 0.1);
+}
+
+.historia__hito--destacado .historia__tarjeta {
+    border-color: var(--yellow-color);
+}
+
+.historia__fecha {
+    display: inline-block;
+    background: var(--yellow-color);
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 1.2rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.historia__titulo {
+    text-align: left;
+    color: var(--white-color);
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    margin-bottom: var(--spacing-xs);
+}
+
+.historia__tarjeta p {
+    font-family: var(--second-font);
+    color: var(--gray-white-color);
+    font-size: 1.6rem;
+}
+
+.historia__enlace {
+    margin-top: var(--spacing-sm);
+    color: var(--yellow-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.historia__enlace i {
+    margin-left: 0.8rem;
+    transition: transform var(--transition-base);
+}
+
+.historia__enlace:hover {
+    color: var(--white-color);
+}
+
+.historia__enlace:hover i {
+    transform: translateX(4px);
+}
+
+.historia__cta {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.historia__cta p {
+    color: var(--white-color);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}/* Escritorio: línea central y tarjetas alternas */
+@media (min-width: 960px) {
+    .historia__lista {
+        padding-left: 0;
+    }
+
+    .historia__lista::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .historia__hito {
+        width: 50%;
+        padding-right: 6rem;
+    }
+
+    .historia__hito:nth-child(even) {
+        margin-left: 50%;
+        padding-right: 0;
+        padding-left: 6rem;
+    }
+
+    .historia__punto {
+        left: auto;
+        right: -2.1rem;
+    }
+
+    .historia__hito:nth-child(even) .historia__punto {
+        right: auto;
+        left: -2.1rem;
+    }
+}
+
+/*=====  End of Historia  ======*/

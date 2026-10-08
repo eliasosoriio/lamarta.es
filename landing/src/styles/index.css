@@ -181,43 +181,60 @@ li {
   padding: 0 var(--container-padding);
 }
 
-/* Buttons Base Styles - Flat Design */
+/* Botones: una sola definición para toda la web (planos, sin sombras ni movimiento) */
 .btn {
-  display: inline-block;
-  padding: 1.2rem 3rem;
-  font-size: 1.6rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.4rem 3rem;
+  font-family: var(--first-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;
-  border: 2px solid transparent;
+  border: 2px solid var(--yellow-color);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: var(--transition-props);
-  letter-spacing: 0.05em;
 }
 
-.btn-primary {
+.btn i {
+  font-size: 1.6rem;
+}
+
+/* Principal: relleno amarillo; al pasar el ratón se invierte */
+.btn--primary {
   background: var(--yellow-color);
   color: var(--dark-color);
-  border-color: var(--yellow-color);
 }
 
-.btn-primary:hover {
-  background: var(--dark-color);
-  color: var(--yellow-color);
-  border-color: var(--yellow-color);
-}
-
-.btn-secondary {
-  background: var(--dark-color);
-  color: var(--white-color);
-  border-color: var(--dark-color);
-}
-
-.btn-secondary:hover {
+.btn--primary:hover {
   background: transparent;
+  color: var(--yellow-color);
+}
+
+/* Secundario: contorno amarillo; al pasar el ratón se rellena */
+.btn--secondary {
+  background: transparent;
+  color: var(--yellow-color);
+}
+
+.btn--secondary:hover {
+  background: var(--yellow-color);
   color: var(--dark-color);
-  border-color: var(--dark-color);
+}
+
+/* Variantes de tamaño */
+.btn--sm {
+  padding: 1rem 2.2rem;
+  font-size: 1.3rem;
+}
+
+.btn--block {
+  width: 100%;
 }
 
 /* Card Component - Flat Design */

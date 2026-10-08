@@ -1,5 +1,5 @@
 /*=============================================
-=            Carta - Dark Mode               =
+=            Carta - Pizarra de plancha      =
 =============================================*/
 
 /* Dark background for entire page */
@@ -8,53 +8,147 @@ body:has(.filtros) {
     min-height: 100vh;
 }
 
-.filtros,
-.entrantes,
-.hamburguesas {
+/* Pedir online */
+.carta--pedir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
     width: 90vw;
-    max-width: 1400px;
-    margin: 0 auto var(--spacing-xl) auto;
+    max-width: 1100px;
+    margin: var(--spacing-lg) auto var(--spacing-md);
+    text-align: center;
+}
+
+.carta--pedir p {
+    font-family: var(--second-font);
+    font-size: clamp(1.6rem, 2.2vw, 1.9rem);
+    font-weight: 700;
+    color: var(--gray-white-color);
+}
+
+.carta--pedir__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}/* Filtros: todos visibles; en móvil se reparten en varias líneas y en escritorio quedan fijos */
+.filtros {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-md);
+    padding: 0 5vw var(--spacing-sm);
+    gap: 1rem;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-md);
 }
 
-.filtros {
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-sm);
+.filtros li {
+    flex: 0 0 auto;
 }
 
-/* Remove box styling - just a list */
-.entrantes,
-.hamburguesas {
-    background: transparent;
-    padding: var(--spacing-md) 0;
-    border-radius: 0;
-    border: none;
+.filtros .button--filter {
+    margin-top: 0;
 }
 
-@media screen and (min-width: 768px) {
-    .entrantes,
-    .hamburguesas {
-        width: 85vw;
-    }
+/* Contenido */
+.carta--contenido {
+    width: 90vw;
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.carta--seccion {
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Etiqueta de precio (compartida por platos y hamburguesas) */
+.precio-tag {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 9.6rem;
+    padding: 0.6rem 1.4rem;
+    color: #f0f0f0;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-sm);
+    line-height: 1.2;
+    transition: var(--transition-props);
+}
+
+.precio-tag small {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.precio-tag strong {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* Menú: la opción destacada, con sombra dura y corona */
+.precio-tag--menu {
+    color: var(--dark-color);
+    background: var(--yellow-color);
+    border-color: var(--yellow-color);
+    box-shadow: 0.4rem 0.4rem 0 var(--orange-color);
+}
+
+.precio-tag--menu small {
+    color: rgba(60, 57, 53, 0.75);
+}
+
+.precio-tag--corona {
+    position: absolute;
+    top: -1.9rem;
+    right: -0.8rem;
+    width: 2.6rem;
+    transform: rotate(14deg);
+}
+
+/* Mensajes de estado de la carta (cargando / sin secciones) */
+.carta--aviso {
+    margin: var(--spacing-xl) auto var(--spacing-lg);
+    max-width: 90vw;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    text-align: center;
+    color: #f5f5f5;
+    position: relative;
+    padding-bottom: var(--spacing-md);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carta--aviso::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--yellow-color), var(--orange-color));
+    border-radius: var(--radius-full);
 }
 
 @media screen and (min-width: 960px) {
-    .entrantes,
-    .hamburguesas {
-        width: 75vw;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .entrantes,
-    .hamburguesas {
-        width: 70vw;
+    .filtros {
+        position: sticky;
+        top: 9.6rem;
+        z-index: var(--z-dropdown);
+        padding: var(--spacing-xs) 0;
+        background: rgba(26, 25, 24, 0.92);
+        backdrop-filter: blur(8px);
     }
 }
 
 /*=====  End of Carta  ======*/
-

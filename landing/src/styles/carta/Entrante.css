@@ -1,50 +1,82 @@
 /*=============================================
-=            Entrante - Flat Modern          =
+=            Entrante - Línea de puntos      =
 =============================================*/
 
-.entrante {
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.8rem;
-    padding: var(--spacing-md) var(--spacing-sm);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition-props);
+.entrantes {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: var(--spacing-xl);
 }
 
-.entrante:hover {
-    background: rgba(254, 206, 0, 0.05);
-    border-radius: var(--radius-sm);
+/* Móvil: el nombre arriba y los precios debajo, con aire entre platos */
+.plato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.entrante:last-child {
-    border-bottom: none;
-}
-
-.entrante--nombre {
+.plato--nombre {
     font-family: var(--second-font);
     font-weight: 700;
-    color: #e0e0e0;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    color: #f0f0f0;
 }
 
-.entrante--precio {
-    background: transparent;
-    border: 2px solid var(--yellow-color);
-    border-radius: 50px;
-    padding: 0.8rem 1.5rem;
-    min-width: 9rem;
-    text-align: center;
-    font-weight: 700;
+/* Guía de puntos entre el nombre y el precio */
+.plato--guia {
+    display: none;
+    flex: 1;
+    min-width: 2rem;
+    border-bottom: 2px dotted rgba(255, 255, 255, 0.25);
+}
+
+.plato--precios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.plato--precios .precio-tag {
+    min-width: 8.4rem;
+    padding: 0.4rem 1.2rem;
+    border-color: var(--yellow-color);
     color: var(--yellow-color);
-    transition: var(--transition-props);
 }
 
-.entrante:hover .entrante--precio {
+.plato--precios .precio-tag small {
+    color: rgba(254, 206, 0, 0.7);
+}
+
+.plato:hover .precio-tag {
     background: var(--yellow-color);
     color: var(--dark-color);
-    transform: scale(1.05);
+}
+
+.plato:hover .precio-tag small {
+    color: rgba(60, 57, 53, 0.75);
+}
+
+@media screen and (min-width: 600px) {
+    .plato {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem 1.2rem;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .plato--guia {
+        display: block;
+        transform: translateY(0.6rem);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .entrantes {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /*=====  End of Entrante  ======*/
-

@@ -29,18 +29,26 @@ function Header() {
                        Carta
                     </Link>
                     <Link className={`header__link ${isActive('/conocenos')}`} to="/conocenos">
-                       Conócenos
+                       ¡Aplástala tú!
                     </Link>
-                    <Link className={`header__link ${isActive('/blog')}`} to="/blog">
-                       Blog
+                    <Link className={`header__link ${isActive('/historia')}`} to="/historia">
+                       Historia
                     </Link>
                     <Link className={`header__link ${isActive('/contacto')}`} to="/contacto">
                        Contacto
                     </Link>
                 </nav>
 
+                {location.pathname !== '/conocenos' && (
+                    <Link className="header__juego" to="/conocenos" aria-label="Jugar a ¡Aplástala tú!, el juego de Lamarta">
+                        <i className="fa-solid fa-gamepad" aria-hidden="true"></i>
+                        <span className="header__juego-texto" aria-hidden="true">Juega ya</span>
+                        <span className="header__juego-punto" aria-hidden="true"></span>
+                    </Link>
+                )}
+
                 <a
-                    className="header__cta"
+                    className="btn btn--primary btn--sm header__cta"
                     href="https://r.qamarero.com/lamarta?mode=PICKUP"
                     target="_blank"
                     rel="noreferrer"

@@ -1,52 +1,22 @@
 /*=============================================
-=            ExplicacionMenu - Compact       =
+=            ExplicacionMenu - Nota          =
 =============================================*/
 
 .menu--explicacion {
-    border: none;
-    border-left: 3px solid var(--yellow-color);
-    border-radius: 0;
-    font-size: 1.3rem;
-    max-width: 90vw;
-    width: 100%;
-    align-self: center;
-    padding: var(--spacing-xs) var(--spacing-md);
-    background: rgba(254, 206, 0, 0.05);
-    line-height: 1.6;
-    font-weight: 600;
-    margin: var(--spacing-sm) auto var(--spacing-md);
-    text-align: left;
+    margin: var(--spacing-xs) 0 var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(254, 206, 0, 0.06);
+    border: 2px dashed rgba(254, 206, 0, 0.5);
+    border-radius: var(--radius-sm);
 }
 
 .menu--explicacion p {
-    color: var(--white-color);
-    font-weight: 500;
-}
-
-.menu--explicacion strong {
+    font-family: var(--second-font);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: var(--yellow-color);
-    font-weight: 500;
-}
-
-@media screen and (min-width: 768px) {
-    .menu--explicacion {
-        width: 85vw;
-        max-width: 1400px;
-        font-size: 1.4rem;
-    }
-}
-
-@media screen and (min-width: 960px) {
-    .menu--explicacion {
-        width: 75vw;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .menu--explicacion {
-        width: 70vw;
-    }
 }
 
 /*=====  End of ExplicacionMenu  ======*/
-
